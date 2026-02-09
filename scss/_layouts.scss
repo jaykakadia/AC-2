@@ -11,8 +11,8 @@
   }
 
   @include mobile-tablet {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-columns: 5rem 14rem 1fr;
+    grid-template-rows: 1fr auto;
   }
 }
 
@@ -28,7 +28,8 @@
   justify-content: space-between;
 
   @include mobile-tablet {
-    display: none;
+    width: 5rem;
+    padding: $spacing-sm 0;
   }
 
   &__logo {
@@ -39,10 +40,13 @@
       height: auto;
       margin-bottom: 14px;
       @include laptop {
-       margin-bottom: 32px;
+        margin-bottom: 32px;
       }
       @media (max-width: 845px) {
         margin-bottom: 26px;
+      }
+      @media (max-width: 667px) {
+        margin-bottom: 28.9px;
       }
     }
   }
@@ -85,6 +89,9 @@
     font-weight: 600;
   }
 }
+.margin-big {
+  margin-bottom: 2.8rem;
+}
 
 .sidebar {
   background-color: $main-color;
@@ -102,7 +109,8 @@
     margin: 1rem;
   }
   @include mobile-tablet {
-    display: none;
+    width: 14rem;
+    padding: $spacing-md;
   }
 
   &__brand {
@@ -112,11 +120,19 @@
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: $spacing-xs;
+
+      @include mobile-tablet {
+        font-size: 1.6rem;
+      }
     }
 
     p {
       font-size: 1.2rem;
       color: $light-color;
+
+      @include mobile-tablet {
+        font-size: 1rem;
+      }
     }
   }
 
@@ -186,9 +202,12 @@
   overflow-y: auto;
 
   @include mobile-tablet {
-    padding: $spacing-md;
+    padding: $spacing-sm;
+    grid-column: 3;
+    grid-row: 1;
   }
 }
+
 
 .right-panel {
   background-color: $white;
@@ -201,9 +220,11 @@
   box-shadow: $shadow-md;
 
   @include mobile-tablet {
-    border-radius: 0;
+    grid-column: 3;
+    grid-row: 2;
     height: auto;
     position: static;
+    padding: $spacing-sm;
   }
 }
 
@@ -217,7 +238,7 @@
   z-index: 100;
 
   @include mobile-tablet {
-    display: flex;
+    display: none;
   }
 
   &__logo {
