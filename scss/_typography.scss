@@ -1,0 +1,60 @@
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  color: $dark-color;
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+// Text utilities
+.text-sm {
+  font-size: 1.2rem;
+}
+
+.text-md {
+  font-size: 1.4rem;
+}
+
+.text-lg {
+  font-size: 1.6rem;
+}
+
+.text-muted {
+  color: $light-color;
+}
+
+.text-accent {
+  color: $accent-color;
+}
+
+.text-dark {
+  color: $dark-color;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.text-medium {
+  font-weight: 500;
+}

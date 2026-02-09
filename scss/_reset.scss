@@ -1,12 +1,52 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-html{
-    font-size: 62.5%;
+
+html {
+  font-size: 62.5%;
 }
-body{
-    font-family: 'Poppins', sans-serif;
-    background-color: white;
-}   
+
+body {
+  font-family: "Inter", "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  background-color: $main-color;
+  color: $dark-color;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}

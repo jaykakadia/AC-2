@@ -1,5 +1,79 @@
+// Flexbox utilities
 @mixin flex-column($gap: 1rem) {
   display: flex;
   flex-direction: column;
   gap: $gap;
+}
+
+@mixin flex-row($gap: 1rem) {
+  display: flex;
+  flex-direction: row;
+  gap: $gap;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Responsive breakpoints
+@mixin mobile {
+  @media (max-width: #{$mobile - 1}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $mobile) and (max-width: #{$tablet - 1}) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: $tablet) and (max-width: #{$laptop - 1}) {
+    @content;
+  }
+}
+
+@mixin laptop-up {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin mobile-tablet {
+  @media (max-width: #{$tablet - 1}) {
+    @content;
+  }
+}
+
+// Card mixin
+@mixin card($bg: $white, $radius: $radius-lg) {
+  background-color: $bg;
+  border-radius: $radius;
+  padding: $spacing-md;
+}
+
+// Transition
+@mixin transition($property: all) {
+  transition: $property 0.2s ease-in-out;
 }

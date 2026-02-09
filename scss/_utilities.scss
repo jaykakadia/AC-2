@@ -1,3 +1,76 @@
-.logo-main{
-    height: 5rem;
+// Logo
+.logo-main {
+  height: 4rem;
+}
+
+// Display utilities
+.d-none {
+  display: none !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+// Responsive display
+@include mobile {
+  .d-none-mobile {
+    display: none !important;
+  }
+}
+
+@include tablet {
+  .d-none-tablet {
+    display: none !important;
+  }
+}
+
+@include desktop {
+  .d-none-desktop {
+    display: none !important;
+  }
+}
+
+// Spacing utilities
+.mt-sm {
+  margin-top: $spacing-sm;
+}
+.mt-md {
+  margin-top: $spacing-md;
+}
+.mt-lg {
+  margin-top: $spacing-lg;
+}
+
+.mb-sm {
+  margin-bottom: $spacing-sm;
+}
+.mb-md {
+  margin-bottom: $spacing-md;
+}
+.mb-lg {
+  margin-bottom: $spacing-lg;
+}
+
+// Flex utilities
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.gap-sm {
+  gap: $spacing-sm;
+}
+.gap-md {
+  gap: $spacing-md;
+}
+.gap-lg {
+  gap: $spacing-lg;
 }

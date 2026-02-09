@@ -1,0 +1,218 @@
+
+.dashboard {
+  display: grid;
+  grid-template-columns: $icon-sidebar-width $sidebar-width 1fr $right-panel-width;
+  min-height: 100vh;
+
+  @include laptop {
+    grid-template-columns: $icon-sidebar-width 18rem 1fr 24rem;
+  }
+
+  @include mobile-tablet {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+}
+
+.icon-sidebar {
+  background-color: $white;
+  @include flex-column($spacing-md);
+  align-items: center;
+  padding: $spacing-lg $spacing-sm;
+  // border-radius: 0 $radius-xl $radius-xl 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+
+  @include mobile-tablet {
+    display: none;
+  }
+
+  &__logo {
+    margin-bottom: $spacing-md;
+
+    img {
+      width: 4rem;
+      height: auto;
+    }
+  }
+
+  &__nav {
+    @include flex-column($spacing-sm);
+    flex: 1;
+
+    a {
+      @include flex-center;
+      width: 4rem;
+      height: 4rem;
+      border-radius: $radius-md;
+      color: $dark-color;
+      @include transition;
+
+      &:hover {
+        background-color: rgba($dark-color, 0.05);
+      }
+
+      &.active {
+        background-color: $main-color;
+      }
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  &__help {
+    width: 4rem;
+    height: 4rem;
+    background-color: $dark-color;
+    color: $white;
+    border-radius: $radius-full;
+    @include flex-center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-top: auto;
+  }
+}
+
+.sidebar {
+  background-color: $white;
+  padding: $spacing-lg;
+  overflow-y: auto;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+
+  @include mobile-tablet {
+    display: none;
+  }
+
+  &__brand {
+    margin-bottom: $spacing-xl;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: $spacing-xs;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: $light-color;
+    }
+  }
+
+  &__menu {
+    @include flex-column($spacing-sm);
+  }
+
+  &__item {
+    &-header {
+      @include flex-between;
+      padding: $spacing-sm 0;
+      cursor: pointer;
+
+      span {
+        font-weight: 500;
+      }
+
+      svg {
+        width: 1.6rem;
+        height: 1.6rem;
+        color: $light-color;
+        @include transition;
+      }
+
+      &.open svg {
+        transform: rotate(90deg);
+      }
+    }
+
+    &-content {
+      @include flex-column($spacing-xs);
+      padding-left: $spacing-md;
+
+      a {
+        padding: $spacing-xs 0;
+        font-size: 1.3rem;
+        color: $light-color;
+        @include transition;
+
+        &:hover {
+          color: $dark-color;
+        }
+
+        &.active {
+          color: $dark-color;
+          font-weight: 500;
+        }
+      }
+
+      .add-new {
+        color: $accent-color;
+        font-weight: 500;
+
+        &:hover {
+          color: darken($accent-color, 10%);
+        }
+      }
+    }
+  }
+}
+
+// Main Content
+.main-content {
+  padding: $spacing-lg;
+  overflow-y: auto;
+
+  @include mobile-tablet {
+    padding: $spacing-md;
+  }
+}
+
+.right-panel {
+  background-color: $white;
+  padding: $spacing-lg;
+  border-radius: $radius-xl 0 0 $radius-xl;
+  overflow-y: auto;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+
+  @include mobile-tablet {
+    border-radius: 0;
+    height: auto;
+    position: static;
+  }
+}
+
+.mobile-nav {
+  display: none;
+  background-color: $white;
+  padding: $spacing-md;
+  @include flex-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  @include mobile-tablet {
+    display: flex;
+  }
+
+  &__logo {
+    height: 3rem;
+  }
+
+  &__toggle {
+    @include flex-center;
+    width: 4rem;
+    height: 4rem;
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+}

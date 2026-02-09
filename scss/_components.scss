@@ -1,24 +1,490 @@
-.right-side-bar{
+// Header
+.header {
+  @include flex-between;
+  margin-bottom: $spacing-xl;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+
+  &__date {
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+    }
+  }
+
+  &__search {
+    flex: 1;
+    max-width: 40rem;
+    position: relative;
+
+    input {
+      width: 100%;
+      padding: $spacing-md $spacing-lg;
+      padding-left: 4.5rem;
+      background-color: $white;
+      border-radius: $radius-xl;
+      font-size: 1.4rem;
+
+      &::placeholder {
+        color: $light-color;
+      }
+    }
+
+    svg {
+      position: absolute;
+      left: $spacing-lg;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1.8rem;
+      height: 1.8rem;
+      color: $light-color;
+    }
+  }
+}
+
+// Section Header
+.section-header {
+  @include flex-between;
+  margin-bottom: $spacing-md;
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  a {
+    color: $accent-color;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+}
+
+// Project Cards
+.projects {
+  margin-bottom: $spacing-xl;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: $spacing-md;
+  }
+}
+
+.project-card {
+  @include card($secondary-color, $radius-lg);
+  padding: $spacing-lg;
+  position: relative;
+
+  &--yellow {
+    background-color: $tertiary-color;
+  }
+
+  &__header {
+    @include flex-between;
+    margin-bottom: $spacing-lg;
+
+    .avatars {
+      @include flex-row(0);
+
+      .avatar {
+        margin-left: -0.8rem;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+
+      .avatar-count {
+        width: 3.2rem;
+        height: 3.2rem;
+        background-color: $accent-color;
+        color: $white;
+        border-radius: $radius-full;
+        @include flex-center;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border: 2px solid $white;
+        margin-left: -0.8rem;
+      }
+    }
+
+    .menu-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      @include flex-column(0.3rem);
+      padding: $spacing-xs;
+
+      span {
+        width: 0.4rem;
+        height: 0.4rem;
+        background-color: $dark-color;
+        border-radius: $radius-full;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__deadline {
+    font-size: 1.2rem;
+    color: $dark-color;
+    opacity: 0.7;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__footer {
+    @include flex-between;
+    font-size: 1.2rem;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__progress {
+    height: 0.4rem;
+    background-color: rgba($dark-color, 0.2);
+    border-radius: $radius-sm;
+    overflow: hidden;
+
+    &-bar {
+      height: 100%;
+      background-color: $dark-color;
+      border-radius: $radius-sm;
+    }
+  }
+}
+
+// Avatar
+.avatar {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: $radius-full;
+  overflow: hidden;
+  border: 2px solid $white;
+
+  img {
+    width: 100%;
     height: 100%;
-    height: 100vh;
+    object-fit: cover;
+  }
+
+  &--sm {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  &--lg {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &--xl {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  &--initials {
+    background-color: $main-color;
+    @include flex-center;
+    font-weight: 600;
+    color: $accent-color;
+    font-size: 1.2rem;
+  }
+
+  &--add {
+    background-color: transparent;
+    border: 2px dashed $secondary-color;
+    @include flex-center;
+    color: $secondary-color;
+    font-size: 1.4rem;
+  }
 }
-.right-side-bar-nav{
-    @include flex-column(0.5rem);
-    &-icons{
-        color:#000
+
+// Reminders
+.reminders {
+  &__card {
+    @include card($white, $radius-lg);
+    padding: $spacing-lg;
+    @include flex-between;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+
+    &-content {
+      .time {
+        font-size: 1.2rem;
+        color: $light-color;
+        margin-bottom: $spacing-xs;
+      }
+
+      h3 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        max-width: 35rem;
+      }
     }
-    
+  }
+
+  &__dots {
+    @include flex-row($spacing-xs);
+    justify-content: center;
+    margin-top: $spacing-md;
+
+    span {
+      width: 0.6rem;
+      height: 0.6rem;
+      background-color: $secondary-color;
+      border-radius: $radius-full;
+
+      &.active {
+        background-color: $accent-color;
+      }
+    }
+  }
 }
-.right-side-bar-user{
-        width: 3rem;
-        height: 3rem;
-        background-color: #000;
-        color:white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        color: white;
-        cursor: pointer;
+
+// Buttons
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-xl;
+  font-weight: 500;
+  font-size: 1.4rem;
+  @include transition;
+
+  &--primary {
+    background-color: $accent-color;
+    color: $white;
+
+    &:hover {
+      background-color: darken($accent-color, 8%);
     }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 1px solid $dark-color;
+    color: $dark-color;
+
+    &:hover {
+      background-color: $dark-color;
+      color: $white;
+    }
+  }
+
+  &--sm {
+    padding: $spacing-sm $spacing-md;
+    font-size: 1.2rem;
+  }
+}
+
+// Right Panel Components
+.user-header {
+  @include flex-row($spacing-md);
+  gap: 0;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: $spacing-xl;
+  position: relative;
+  justify-content: space-between;
+
+  &__actions {
+    @include flex-row($spacing-md);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__notification {
+    position: relative;
+
+    svg {
+      width: 2.2rem;
+      height: 2.2rem;
+      color: $dark-color;
+    }
+  }
+
+  &__profile {
+    @include flex-row($spacing-sm);
+    align-items: center;
+
+    .user-info {
+      span {
+        font-size: 1rem;
+        color: $light-color;
+        display: block;
+      }
+
+      strong {
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+.drop-down{
+  height: 24px;
+  width: 24px;
+  background-color: rgba($secondary-color, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.drop-down-svg{
+  width: 12px;
+  height: 12px;
+  color: $secondary-color;
+}
+
+// Team Section
+.team-section {
+  margin-bottom: $spacing-xl;
+
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: $spacing-md;
+  }
+
+  &__avatars {
+    @include flex-row(0);
+    margin-bottom: $spacing-lg;
+
+    .avatar {
+      margin-left: -0.6rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-sm;
+    padding: $spacing-md;
+    background-color: $main-color;
+    border-radius: $radius-md;
+
+    &-item {
+      text-align: center;
+
+      span {
+        font-size: 1.1rem;
+        color: $light-color;
+        display: block;
+        margin-bottom: $spacing-xs;
+      }
+
+      strong {
+        font-size: 1.6rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// Daily Tasks
+.daily-tasks {
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-sm;
+    margin-top: $spacing-md;
+  }
+}
+
+.task-card {
+  @include card($main-color, $radius-lg);
+  padding: $spacing-md;
+  min-height: 12rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &--accent {
+    background-color: $secondary-color;
+  }
+
+  &__status {
+    @include flex-row($spacing-xs);
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: auto;
+
+    .dot {
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: $radius-full;
+      background-color: $accent-color;
+
+      &--green {
+        background-color: #4caf50;
+      }
+    }
+
+    span {
+      color: $light-color;
+      font-size: 1.1rem;
+    }
+  }
+
+  &__checkbox {
+    position: absolute;
+    top: $spacing-md;
+    right: $spacing-md;
+    width: 1.6rem;
+    height: 1.6rem;
+    border: 1px solid $light-color;
+    border-radius: 0.3rem;
+
+    &.checked {
+      background-color: #4caf50;
+      border-color: #4caf50;
+
+      &::after {
+        content: "✓";
+        color: $white;
+        font-size: 1rem;
+        @include flex-center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-top: auto;
+  }
+
+  &__add {
+    @include flex-center;
+    font-size: 2.4rem;
+    color: $light-color;
+    flex: 1;
+  }
+
+  &__decoration {
+    position: absolute;
+    bottom: $spacing-md;
+    right: $spacing-md;
+    width: 4rem;
+    height: 4rem;
+    opacity: 0.3;
+  }
+}
