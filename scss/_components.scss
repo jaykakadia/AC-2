@@ -417,6 +417,11 @@
     padding: $spacing-md;
     box-shadow: $shadow-lg;
     border-radius: $radius-md;
+    @media (max-width: 119.2rem) {
+      padding: $spacing-md $spacing-sm;
+       grid-template-columns: repeat(2, 1fr) 0.8fr;
+       gap: 0;
+    }
 
     &-item {
       text-align: start;

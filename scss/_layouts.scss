@@ -41,6 +41,9 @@
       @include laptop {
        margin-bottom: 32px;
       }
+      @media (max-width: 845px) {
+        margin-bottom: 26px;
+      }
     }
   }
 
