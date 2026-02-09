@@ -351,6 +351,12 @@ h4 {
   font-weight: 600;
   max-width: 35rem;
 }
+@media (max-width: 1321px) {
+  .reminders__card {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
 .reminders__dots {
   display: flex;
   flex-direction: row;
