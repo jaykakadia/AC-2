@@ -1,11 +1,13 @@
-
 .dashboard {
   display: grid;
-  grid-template-columns: $icon-sidebar-width $sidebar-width 1fr .70fr;
+  grid-template-columns: $icon-sidebar-width $sidebar-width 1fr minmax(
+      34rem,
+      0.75fr
+    );
   min-height: 100vh;
 
   @include laptop {
-    grid-template-columns: $icon-sidebar-width 18rem 1fr 24rem;
+    grid-template-columns: $icon-sidebar-width 17rem 1fr 33rem;
   }
 
   @include mobile-tablet {
@@ -35,13 +37,16 @@
     img {
       width: 6rem;
       height: auto;
-          margin-bottom: 14px;
+      margin-bottom: 14px;
+      @include laptop {
+       margin-bottom: 32px;
+      }
     }
   }
 
   &__nav {
     @include flex-column($spacing-sm);
-    gap:0;
+    gap: 0;
 
     a {
       @include flex-center;
@@ -86,12 +91,12 @@
   height: 100vh;
   position: sticky;
   top: 0;
-  &__line{
+  &__line {
     height: 1px;
     background-color: rgba($dark-color, 0.1);
     width: 150%;
     transform: translateX(-3.5rem);
-    margin:1rem;
+    margin: 1rem;
   }
   @include mobile-tablet {
     display: none;
@@ -141,7 +146,7 @@
 
     &-content {
       @include flex-column($spacing-xs);
-      gap:0;
+      gap: 0;
       padding-left: $spacing-md;
 
       a {

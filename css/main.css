@@ -688,12 +688,12 @@ h4 {
 
 .dashboard {
   display: grid;
-  grid-template-columns: 6rem 26rem 1fr 0.7fr;
+  grid-template-columns: 6rem 26rem 1fr minmax(34rem, 0.75fr);
   min-height: 100vh;
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 945px) {
   .dashboard {
-    grid-template-columns: 6rem 18rem 1fr 24rem;
+    grid-template-columns: 6rem 17rem 1fr 33rem;
   }
 }
 @media (max-width: 767px) {
@@ -724,6 +724,11 @@ h4 {
   width: 6rem;
   height: auto;
   margin-bottom: 14px;
+}
+@media (min-width: 768px) and (max-width: 945px) {
+  .icon-sidebar__logo img {
+    margin-bottom: 32px;
+  }
 }
 .icon-sidebar__nav {
   display: flex;
@@ -929,7 +934,7 @@ h4 {
     display: none !important;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 946px) {
   .d-none-desktop {
     display: none !important;
   }
