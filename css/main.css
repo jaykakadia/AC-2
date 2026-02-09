@@ -15,7 +15,6 @@ body {
   font-family: "Inter", "Montserrat", sans-serif;
   font-size: 1.4rem;
   line-height: 1.5;
-  background-color: #f2ece2;
   color: #111111;
   min-height: 100vh;
 }
@@ -113,35 +112,33 @@ h4 {
 
 .header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   margin-bottom: 3.2rem;
-  flex-wrap: wrap;
-  gap: 1.6rem;
+  gap: 0.8rem;
 }
 .header__date h1 {
-  font-size: 2.8rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 .header__search {
   flex: 1;
-  max-width: 40rem;
   position: relative;
 }
 .header__search input {
   width: 100%;
-  padding: 1.6rem 2.4rem;
+  padding: 1rem 1.3rem;
   padding-left: 4.5rem;
   background-color: #ffffff;
   border-radius: 2rem;
   font-size: 1.4rem;
+  border: 1px solid rgba(157, 157, 157, 0.3);
 }
 .header__search input::placeholder {
   color: #9d9d9d;
 }
 .header__search svg {
   position: absolute;
-  left: 2.4rem;
+  left: 1.6rem;
   top: 50%;
   transform: translateY(-50%);
   width: 1.8rem;
@@ -180,6 +177,10 @@ h4 {
   padding: 1.6rem;
   padding: 2.4rem;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 30rem;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
 }
 .project-card--yellow {
   background-color: #fce6bd;
@@ -212,8 +213,25 @@ h4 {
   justify-content: center;
   font-size: 1.1rem;
   font-weight: 600;
-  border: 2px solid #ffffff;
   margin-left: -0.8rem;
+  position: relative;
+  z-index: 10;
+}
+.project-card__header .avatars .z-index-9 {
+  z-index: 9;
+}
+.project-card__header .avatars .color-pink {
+  border: 2px solid #FABCA4;
+  background-color: #000;
+  color: #ffffff;
+}
+.project-card__header .avatars .color-yellow {
+  background-color: #fce6bd;
+  border: 2px solid #fce6bd;
+  color: black;
+}
+.project-card__header .avatars .border-black {
+  border: 2px solid #000;
 }
 .project-card__header .menu-btn {
   background: none;
@@ -239,7 +257,7 @@ h4 {
   font-size: 1.2rem;
   color: #111111;
   opacity: 0.7;
-  margin-bottom: 3.2rem;
+  flex: 1;
 }
 .project-card__footer {
   display: flex;
@@ -313,6 +331,9 @@ h4 {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1.6rem;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(157, 157, 157, 0.3);
+  padding-bottom: 3.2rem;
 }
 .reminders__card-content .time {
   font-size: 1.2rem;
@@ -329,7 +350,7 @@ h4 {
   flex-direction: row;
   gap: 0.4rem;
   justify-content: center;
-  margin-top: 1.6rem;
+  margin-top: -2.1rem;
 }
 .reminders__dots span {
   width: 0.6rem;
@@ -346,7 +367,7 @@ h4 {
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  padding: 0.8rem 1.6rem;
+  padding: 1.1rem 1.6rem;
   border-radius: 2rem;
   font-weight: 500;
   font-size: 1.4rem;
@@ -445,12 +466,24 @@ h4 {
   flex-direction: row;
   gap: 0;
   margin-bottom: 2.4rem;
+  justify-content: space-around;
 }
 .team-section__avatars .avatar {
   margin-left: -0.6rem;
 }
 .team-section__avatars .avatar:first-child {
   margin-left: 0;
+}
+.team-section .sidebar-avatar {
+  margin-left: 0 !important;
+  scale: 1.5;
+}
+.team-section .bigfont {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -1rem !important;
 }
 .team-section__stats {
   display: grid;
@@ -564,9 +597,15 @@ h4 {
   opacity: 0.3;
 }
 
+.aside_bar {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  justify-content: flex-end;
+}
+
 .dashboard {
   display: grid;
-  grid-template-columns: 6rem 24rem 1fr 40rem;
+  grid-template-columns: 6rem 26rem 1fr 0.7fr;
   min-height: 100vh;
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -587,36 +626,34 @@ h4 {
   flex-direction: column;
   gap: 1.6rem;
   align-items: center;
-  padding: 2.4rem 0.8rem;
+  padding: 2.4rem 0;
   position: sticky;
   top: 0;
   height: 100vh;
+  justify-content: space-between;
 }
 @media (max-width: 767px) {
   .icon-sidebar {
     display: none;
   }
 }
-.icon-sidebar__logo {
-  margin-bottom: 1.6rem;
-}
 .icon-sidebar__logo img {
-  width: 4rem;
+  width: 6rem;
   height: auto;
+  margin-bottom: 14px;
 }
 .icon-sidebar__nav {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  flex: 1;
+  gap: 0;
 }
 .icon-sidebar__nav a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 1.2rem;
+  width: 6rem;
+  height: 6rem;
   color: #111111;
   transition: all 0.2s ease-in-out;
 }
@@ -641,16 +678,23 @@ h4 {
   justify-content: center;
   font-size: 1.6rem;
   font-weight: 600;
-  margin-top: auto;
 }
 
 .sidebar {
-  background-color: #ffffff;
+  background-color: #f2ece2;
   padding: 2.4rem;
   overflow-y: auto;
+  overflow-x: hidden;
   height: 100vh;
   position: sticky;
   top: 0;
+}
+.sidebar__line {
+  height: 1px;
+  background-color: rgba(17, 17, 17, 0.1);
+  width: 150%;
+  transform: translateX(-3.5rem);
+  margin: 1rem;
 }
 @media (max-width: 767px) {
   .sidebar {
@@ -658,7 +702,7 @@ h4 {
   }
 }
 .sidebar__brand {
-  margin-bottom: 3.2rem;
+  margin-bottom: 0.8rem;
 }
 .sidebar__brand h1 {
   font-size: 2rem;
@@ -673,36 +717,34 @@ h4 {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  gap: 0;
 }
 .sidebar__item-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.8rem 0;
+  padding: 0.4rem 0;
   cursor: pointer;
 }
 .sidebar__item-header span {
-  font-weight: 500;
+  font-weight: 600;
 }
 .sidebar__item-header svg {
   width: 1.6rem;
   height: 1.6rem;
-  color: #9d9d9d;
   transition: all 0.2s ease-in-out;
-}
-.sidebar__item-header.open svg {
-  transform: rotate(90deg);
 }
 .sidebar__item-content {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  gap: 0;
   padding-left: 1.6rem;
 }
 .sidebar__item-content a {
-  padding: 0.4rem 0;
+  padding: 0.23rem 0;
   font-size: 1.3rem;
-  color: #9d9d9d;
+  color: rgba(17, 17, 17, 0.6);
   transition: all 0.2s ease-in-out;
 }
 .sidebar__item-content a:hover {
@@ -733,11 +775,11 @@ h4 {
 .right-panel {
   background-color: #ffffff;
   padding: 2.4rem;
-  border-radius: 2rem 0 0 2rem;
   overflow-y: auto;
   height: 100vh;
   position: sticky;
   top: 0;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
 }
 @media (max-width: 767px) {
   .right-panel {

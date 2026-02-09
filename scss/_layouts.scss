@@ -1,7 +1,7 @@
 
 .dashboard {
   display: grid;
-  grid-template-columns: $icon-sidebar-width $sidebar-width 1fr $right-panel-width;
+  grid-template-columns: $icon-sidebar-width $sidebar-width 1fr .70fr;
   min-height: 100vh;
 
   @include laptop {
@@ -18,34 +18,36 @@
   background-color: $white;
   @include flex-column($spacing-md);
   align-items: center;
-  padding: $spacing-lg $spacing-sm;
+  padding: $spacing-lg 0;
   // border-radius: 0 $radius-xl $radius-xl 0;
   position: sticky;
   top: 0;
   height: 100vh;
+  justify-content: space-between;
 
   @include mobile-tablet {
     display: none;
   }
 
   &__logo {
-    margin-bottom: $spacing-md;
+    // margin-bottom: $spacing-md;
 
     img {
-      width: 4rem;
+      width: 6rem;
       height: auto;
+          margin-bottom: 14px;
     }
   }
 
   &__nav {
     @include flex-column($spacing-sm);
-    flex: 1;
+    gap:0;
 
     a {
       @include flex-center;
-      width: 4rem;
-      height: 4rem;
-      border-radius: $radius-md;
+      width: 6rem;
+      height: 6rem;
+      // border-radius: $radius-md;
       color: $dark-color;
       @include transition;
 
@@ -73,24 +75,30 @@
     @include flex-center;
     font-size: 1.6rem;
     font-weight: 600;
-    margin-top: auto;
   }
 }
 
 .sidebar {
-  background-color: $white;
+  background-color: $main-color;
   padding: $spacing-lg;
   overflow-y: auto;
+  overflow-x: hidden;
   height: 100vh;
   position: sticky;
   top: 0;
-
+  &__line{
+    height: 1px;
+    background-color: rgba($dark-color, 0.1);
+    width: 150%;
+    transform: translateX(-3.5rem);
+    margin:1rem;
+  }
   @include mobile-tablet {
     display: none;
   }
 
   &__brand {
-    margin-bottom: $spacing-xl;
+    margin-bottom: $spacing-sm;
 
     h1 {
       font-size: 2rem;
@@ -106,38 +114,40 @@
 
   &__menu {
     @include flex-column($spacing-sm);
+    gap: 0;
   }
 
   &__item {
     &-header {
       @include flex-between;
-      padding: $spacing-sm 0;
+      padding: $spacing-xs 0;
       cursor: pointer;
 
       span {
-        font-weight: 500;
+        font-weight: 600;
       }
 
       svg {
         width: 1.6rem;
         height: 1.6rem;
-        color: $light-color;
+        // color: $light-color;
         @include transition;
       }
 
-      &.open svg {
-        transform: rotate(90deg);
-      }
+      // &.open svg {
+      //   transform: rotate(90deg);
+      // }
     }
 
     &-content {
       @include flex-column($spacing-xs);
+      gap:0;
       padding-left: $spacing-md;
 
       a {
-        padding: $spacing-xs 0;
+        padding: 0.23rem 0;
         font-size: 1.3rem;
-        color: $light-color;
+        color: rgba($dark-color, 0.6);
         @include transition;
 
         &:hover {
@@ -175,11 +185,12 @@
 .right-panel {
   background-color: $white;
   padding: $spacing-lg;
-  border-radius: $radius-xl 0 0 $radius-xl;
+  // border-radius: $radius-xl 0 0 $radius-xl;
   overflow-y: auto;
   height: 100vh;
   position: sticky;
   top: 0;
+  box-shadow: $shadow-md;
 
   @include mobile-tablet {
     border-radius: 0;

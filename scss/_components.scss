@@ -1,29 +1,31 @@
 // Header
 .header {
-  @include flex-between;
+  display: flex;
+  flex-direction: column;
   margin-bottom: $spacing-xl;
-  flex-wrap: wrap;
-  gap: $spacing-md;
+  gap: $spacing-sm;
+  // flex-wrap: 1;
+  // gap: $spacing-md;
 
   &__date {
     h1 {
-      font-size: 2.8rem;
+      font-size: 2rem;
       font-weight: 600;
     }
   }
 
   &__search {
     flex: 1;
-    max-width: 40rem;
     position: relative;
 
     input {
       width: 100%;
-      padding: $spacing-md $spacing-lg;
+      padding: 1rem 1.3rem;
       padding-left: 4.5rem;
       background-color: $white;
       border-radius: $radius-xl;
       font-size: 1.4rem;
+      border:1px solid rgba($light-color, 0.3);
 
       &::placeholder {
         color: $light-color;
@@ -32,7 +34,7 @@
 
     svg {
       position: absolute;
-      left: $spacing-lg;
+      left: $spacing-md;
       top: 50%;
       transform: translateY(-50%);
       width: 1.8rem;
@@ -74,6 +76,10 @@
   @include card($secondary-color, $radius-lg);
   padding: $spacing-lg;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 30rem;
+  box-shadow: $shadow-md;
 
   &--yellow {
     background-color: $tertiary-color;
@@ -103,8 +109,26 @@
         @include flex-center;
         font-size: 1.1rem;
         font-weight: 600;
-        border: 2px solid $white;
         margin-left: -0.8rem;
+        position:relative;
+        z-index: 10;
+      }
+      
+      .z-index-9{
+        z-index: 9;
+      }
+      .color-pink{
+        border: 2px solid #FABCA4 ;
+        background-color: #000;
+        color: $white;
+      }
+      .color-yellow {
+        background-color: #fce6bd;
+        border: 2px solid #fce6bd ;
+        color: black;
+      }
+      .border-black{
+        border: 2px solid #000;
       }
     }
 
@@ -134,7 +158,8 @@
     font-size: 1.2rem;
     color: $dark-color;
     opacity: 0.7;
-    margin-bottom: $spacing-xl;
+    // margin-bottom: $spacing-xl;
+    flex: 1;
   }
 
   &__footer {
@@ -211,6 +236,9 @@
     @include flex-between;
     flex-wrap: wrap;
     gap: $spacing-md;
+    box-shadow: $shadow-md;
+    border: 1px solid rgba($light-color, 0.3);
+    padding-bottom: $spacing-xl;
 
     &-content {
       .time {
@@ -230,7 +258,7 @@
   &__dots {
     @include flex-row($spacing-xs);
     justify-content: center;
-    margin-top: $spacing-md;
+    margin-top: -2.1rem;
 
     span {
       width: 0.6rem;
@@ -251,7 +279,7 @@
   align-items: center;
   justify-content: center;
   gap: $spacing-sm;
-  padding: $spacing-sm $spacing-md;
+  padding: 1.1rem $spacing-md;
   border-radius: $radius-xl;
   font-weight: 500;
   font-size: 1.4rem;
@@ -356,6 +384,7 @@
   &__avatars {
     @include flex-row(0);
     margin-bottom: $spacing-lg;
+    justify-content: space-around;
 
     .avatar {
       margin-left: -0.6rem;
@@ -364,6 +393,17 @@
         margin-left: 0;
       }
     }
+  }
+  .sidebar-avatar{
+    margin-left: 0 !important;
+    scale: 1.5;
+  }
+  .bigfont{
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -1rem !important;
   }
 
   &__stats {
@@ -487,4 +527,9 @@
     height: 4rem;
     opacity: 0.3;
   }
+}
+.aside_bar{
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  justify-content: flex-end;
 }

@@ -21,6 +21,7 @@
       <aside class="icon-sidebar">
         <div class="icon-sidebar__logo">
           <img src="./Images_and_svgs/images/Logo.png" alt="Ziferblat Logo" />
+          <div class="sidebar__line"></div>
         </div>
 
         <nav class="icon-sidebar__nav">
@@ -138,6 +139,7 @@
           <h1>Ziferblat</h1>
           <p>Teamwork & time management</p>
         </div>
+        <div class="sidebar__line"></div>
 
         <nav class="sidebar__menu">
           <div class="sidebar__item">
@@ -178,11 +180,11 @@
             </div>
             <div class="sidebar__item-content">
               <a href="#">All projects (4)</a>
-              <a href="#" class="active">Design system</a>
+              <a href="#">Design system</a>
               <a href="#">Make unique design for customer</a>
               <a href="#">User Flow</a>
               <a href="#">UX research</a>
-              <a href="#" class="add-new">Add new project</a>
+              <a href="#" class="active">Add new project</a>
             </div>
           </div>
 
@@ -208,7 +210,7 @@
               <a href="#">New (1)</a>
               <a href="#">In progress (1)</a>
               <a href="#">Done (1)</a>
-              <a href="#" class="add-new">Add new task</a>
+              <a href="#" class="active">Add new task</a>
             </div>
           </div>
 
@@ -287,10 +289,16 @@
             <div class="project-card">
               <div class="project-card__header">
                 <div class="avatars">
-                  <div class="avatar-count">+3</div>
-                  <div class="avatar">
+                  <div class="avatar-count color-pink">+3</div>
+                  <div class="avatar color-pink z-index-9">
                     <img
                       src="https://i.pravatar.cc/100?img=5"
+                      alt="Team member"
+                    />
+                  </div>
+                  <div class="avatar color-pink">
+                    <img
+                      src="https://i.pravatar.cc/100?img=12"
                       alt="Team member"
                     />
                   </div>
@@ -317,10 +325,16 @@
             <div class="project-card project-card--yellow">
               <div class="project-card__header">
                 <div class="avatars">
-                  <div class="avatar-count">+2</div>
-                  <div class="avatar">
+                  <div class="avatar-count border-black color-yellow">+2</div>
+                  <div class="avatar color-yellow z-index-9">
                     <img
                       src="https://i.pravatar.cc/100?img=8"
+                      alt="Team member"
+                    />
+                  </div>
+                  <div class="avatar color-yellow">
+                    <img
+                      src="https://i.pravatar.cc/100?img=12"
                       alt="Team member"
                     />
                   </div>
@@ -368,11 +382,16 @@
       </main>
 
       <aside class="right-panel">
+        <div class="reminders__dots aside_bar">
+          <span></span>
+          <span ></span>
+          <span ></span>
+        </div>
+
         <div class="user-header">
-          
-            <button class="btn btn--primary">Add project</button>
-            <div class="user-header__profile">
-              <button
+          <button class="btn btn--primary">Add project</button>
+          <div class="user-header__profile">
+            <button
               class="user-header__notification"
               aria-label="Notifications"
             >
@@ -391,38 +410,50 @@
                 <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
               </svg>
             </button>
-              <div class="avatar avatar--lg">
-                <img src="https://i.pravatar.cc/100?img=1" alt="Maria" />
-              </div>
-              <div class="user-info">
-                <span>User</span>
-                <strong>Maria</strong>
-              </div>
-              <div class="drop-down">
-                <svg class="drop-down-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
-              </div>
-              
+            <div class="avatar avatar--lg">
+              <img src="https://i.pravatar.cc/100?img=1" alt="Maria" />
             </div>
-          
+            <div class="user-info">
+              <span>User</span>
+              <strong>Maria</strong>
+            </div>
+            <div class="drop-down">
+              <svg
+                class="drop-down-svg"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-chevron-down-icon lucide-chevron-down"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </div>
+          </div>
         </div>
 
         <div class="team-section">
           <h3>Team members</h3>
           <div class="team-section__avatars">
-            <div class="avatar avatar--lg">
+            <div class="avatar avatar--lg sidebar-avatar">
               <img src="https://i.pravatar.cc/100?img=11" alt="Team member" />
             </div>
-            <div class="avatar avatar--lg">
+            <div class="avatar avatar--lg sidebar-avatar" >
               <img src="https://i.pravatar.cc/100?img=12" alt="Team member" />
             </div>
-            <div class="avatar avatar--lg avatar--initials">JR</div>
-            <div class="avatar avatar--lg">
+            <div class="avatar avatar--lg avatar--initials sidebar-avatar">JR</div>
+            <div class="avatar avatar--lg sidebar-avatar">
               <img src="https://i.pravatar.cc/100?img=13" alt="Team member" />
             </div>
-            <div class="avatar avatar--lg">
+            <div class="avatar avatar--lg sidebar-avatar">
               <img src="https://i.pravatar.cc/100?img=14" alt="Team member" />
             </div>
-            <div class="avatar avatar--lg avatar--add">+</div>
+            <div class="avatar avatar--lg avatar--add sidebar-avatar bigfont" style="scale:1" >+</div>
           </div>
 
           <div class="team-section__stats">
