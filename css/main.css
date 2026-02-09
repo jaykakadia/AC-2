@@ -172,7 +172,6 @@ h4 {
 }
 
 .project-card {
-  background-color: #fcbea4;
   border-radius: 1.6rem;
   padding: 1.6rem;
   padding: 2.4rem;
@@ -184,6 +183,9 @@ h4 {
 }
 .project-card--yellow {
   background-color: #fce6bd;
+}
+.project-card--pink {
+  background-color: #fcbea4;
 }
 .project-card__header {
   display: flex;
@@ -221,7 +223,7 @@ h4 {
   z-index: 9;
 }
 .project-card__header .avatars .color-pink {
-  border: 2px solid #FABCA4;
+  border: 2px solid #fabca4;
   background-color: #000;
   color: #ffffff;
 }
@@ -322,7 +324,6 @@ h4 {
 }
 
 .reminders__card {
-  background-color: #ffffff;
   border-radius: 1.6rem;
   padding: 1.6rem;
   padding: 2.4rem;
@@ -466,7 +467,7 @@ h4 {
   flex-direction: row;
   gap: 0;
   margin-bottom: 2.4rem;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .team-section__avatars .avatar {
   margin-left: -0.6rem;
@@ -477,24 +478,25 @@ h4 {
 .team-section .sidebar-avatar {
   margin-left: 0 !important;
   scale: 1.5;
+  transform: translateX(6px);
 }
 .team-section .bigfont {
   font-size: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: -1rem !important;
+  transform: translateX(0px);
 }
 .team-section__stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.8rem;
   padding: 1.6rem;
-  background-color: #f2ece2;
+  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.1);
   border-radius: 1.2rem;
 }
 .team-section__stats-item {
-  text-align: center;
+  text-align: start;
 }
 .team-section__stats-item span {
   font-size: 1.1rem;
@@ -514,22 +516,24 @@ h4 {
 .daily-tasks__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.8rem;
+  gap: 1rem;
   margin-top: 1.6rem;
 }
 
 .task-card {
-  background-color: #f2ece2;
   border-radius: 1.6rem;
   padding: 1.6rem;
-  padding: 1.6rem;
-  min-height: 12rem;
+  padding: 1rem 2rem;
+  min-height: 13rem;
+  width: auto;
   position: relative;
   display: flex;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
   flex-direction: column;
+  overflow: hidden;
 }
 .task-card--accent {
-  background-color: #fcbea4;
+  background-color: #f0894d;
 }
 .task-card__status {
   display: flex;
@@ -537,7 +541,9 @@ h4 {
   gap: 0.4rem;
   align-items: center;
   font-size: 1rem;
-  margin-bottom: auto;
+  margin-bottom: 0.5rem;
+  justify-content: flex-end;
+  margin-right: 2rem;
 }
 .task-card__status .dot {
   width: 0.6rem;
@@ -552,18 +558,21 @@ h4 {
   color: #9d9d9d;
   font-size: 1.1rem;
 }
+.task-card .dot--white {
+  background-color: #fff;
+}
 .task-card__checkbox {
   position: absolute;
-  top: 1.6rem;
+  top: 1.2rem;
   right: 1.6rem;
-  width: 1.6rem;
-  height: 1.6rem;
-  border: 1px solid #9d9d9d;
+  width: 1.3rem;
+  height: 1.3rem;
+  border: 1px solid #f0894d;
   border-radius: 0.3rem;
 }
 .task-card__checkbox.checked {
-  background-color: #4caf50;
-  border-color: #4caf50;
+  background-color: black;
+  border-color: black;
 }
 .task-card__checkbox.checked::after {
   content: "✓";
@@ -576,17 +585,15 @@ h4 {
   height: 100%;
 }
 .task-card__title {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 500;
-  margin-top: auto;
 }
 .task-card__add {
   display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 2.4rem;
-  color: #9d9d9d;
   flex: 1;
+  justify-content: end;
+  align-items: end;
 }
 .task-card__decoration {
   position: absolute;
@@ -601,6 +608,82 @@ h4 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   justify-content: flex-end;
+}
+
+.card-add {
+  background-color: #f2ece2;
+  padding-bottom: 1.5rem;
+}
+
+.margin-top-big {
+  margin-top: 1.9rem;
+}
+
+.color-white {
+  color: #fff !important;
+}
+
+.three-rectangle-1 {
+  position: absolute;
+  top: 107px;
+  left: -10px;
+  width: 70px;
+  height: 18px;
+  border: 1px solid rgba(240, 137, 77, 0.5);
+  transform: rotate(-35deg);
+}
+
+.three-rectangle-2 {
+  position: absolute;
+  top: 133px;
+  left: 0px;
+  width: 70px;
+  height: 18px;
+  border: 1px solid rgba(240, 137, 77, 0.5);
+  transform: rotate(-35deg);
+}
+
+.three-rectangle-3 {
+  position: absolute;
+  top: 94px;
+  left: -40px;
+  width: 70px;
+  height: 18px;
+  border: 1px solid rgba(240, 137, 77, 0.5);
+  transform: rotate(-35deg);
+}
+
+.three-circle-1 {
+  position: absolute;
+  top: 103px;
+  left: 162px;
+  width: 20px;
+  height: 25px;
+  border: 1px solid white;
+  border-radius: 50%;
+  transform: rotate(20deg);
+}
+
+.three-circle-2 {
+  position: absolute;
+  top: 72px;
+  left: 125px;
+  width: 34px;
+  height: 44px;
+  border: 1px solid white;
+  border-radius: 50%;
+  transform: rotate(20deg);
+}
+
+.three-circle-3 {
+  position: absolute;
+  top: 115px;
+  left: 95px;
+  width: 15px;
+  height: 18px;
+  border: 1px solid white;
+  border-radius: 50%;
+  transform: rotate(20deg);
 }
 
 .dashboard {

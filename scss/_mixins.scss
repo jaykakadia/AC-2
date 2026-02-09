@@ -68,7 +68,6 @@
 
 // Card mixin
 @mixin card($bg: $white, $radius: $radius-lg) {
-  background-color: $bg;
   border-radius: $radius;
   padding: $spacing-md;
 }
