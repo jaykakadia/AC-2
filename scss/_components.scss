@@ -67,7 +67,7 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
     gap: $spacing-md;
   }
 }
@@ -160,7 +160,7 @@
   &__deadline {
     font-size: 1.2rem;
     color: $dark-color;
-    opacity: 0.7;
+    opacity: 0.9;
     // margin-bottom: $spacing-xl;
     flex: 1;
   }
@@ -244,10 +244,12 @@
     padding-bottom: $spacing-xl;
 
     &-content {
+      flex:1;
       .time {
         font-size: 1.2rem;
         color: $light-color;
         margin-bottom: $spacing-xs;
+        
       }
 
       h3 {
@@ -256,7 +258,7 @@
         max-width: 35rem;
       }
     }
-    @media (max-width: 1321px) {
+    @media (max-width: 1070px) {
       flex-direction: column;
       gap: $spacing-sm;
     }
@@ -295,6 +297,7 @@
   &--primary {
     background-color: $accent-color;
     color: $white;
+    font-size: smaller;
 
     &:hover {
       background-color: darken($accent-color, 8%);
@@ -341,7 +344,17 @@
     svg {
       width: 2.2rem;
       height: 2.2rem;
-      color: $dark-color;
+      color: rgba($dark-color, 0.75);
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      width: 0.5rem;
+      height: 0.5rem;
+      background-color: $accent-color;
+      border-radius: $radius-full;
     }
   }
 
@@ -403,7 +416,7 @@
   }
   .sidebar-avatar {
     margin-left: 0 !important;
-    scale: 1.5;
+    scale: 1.2;
     transform: translateX(6px);
   }
   .bigfont {
@@ -412,6 +425,7 @@
     align-items: center;
     justify-content: center;
     transform: translateX(0px);
+    scale: 0.85;
   }
 
   &__stats {
@@ -553,7 +567,7 @@
 }
 .aside_bar {
   margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   justify-content: flex-end;
 }
 .card-add {
@@ -622,4 +636,25 @@
   border: 1px solid white;
   border-radius: 50%;
   transform: rotate(20deg);
+}
+.svg-style{
+  position: absolute;
+  // height: 3rem;
+  // width: 3rem;
+  bottom: -18%;
+  right: -28%;
+  scale: 0.8;
+  z-index: -1;
+  @include mobile-tablet {
+            scale: 0.3;
+        z-index: 0;
+        bottom: -94%;
+        right: -66%;
+  }
+  @media (max-width: 527px) {
+    scale: 0.5;
+    z-index: 0;
+    bottom: -49%;
+    right: -49%;
+  }
 }

@@ -172,7 +172,7 @@ h4 {
 }
 .projects__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   gap: 1.6rem;
 }
 
@@ -263,7 +263,7 @@ h4 {
 .project-card__deadline {
   font-size: 1.2rem;
   color: #111111;
-  opacity: 0.7;
+  opacity: 0.9;
   flex: 1;
 }
 .project-card__footer {
@@ -341,6 +341,9 @@ h4 {
   border: 1px solid rgba(157, 157, 157, 0.3);
   padding-bottom: 3.2rem;
 }
+.reminders__card-content {
+  flex: 1;
+}
 .reminders__card-content .time {
   font-size: 1.2rem;
   color: #9d9d9d;
@@ -351,7 +354,7 @@ h4 {
   font-weight: 600;
   max-width: 35rem;
 }
-@media (max-width: 1321px) {
+@media (max-width: 1070px) {
   .reminders__card {
     flex-direction: column;
     gap: 0.8rem;
@@ -388,6 +391,7 @@ h4 {
 .btn--primary {
   background-color: #f0894d;
   color: #ffffff;
+  font-size: smaller;
 }
 .btn--primary:hover {
   background-color: rgb(236.829015544, 112.0549222798, 39.370984456);
@@ -431,7 +435,17 @@ h4 {
 .user-header__notification svg {
   width: 2.2rem;
   height: 2.2rem;
-  color: #111111;
+  color: rgba(17, 17, 17, 0.75);
+}
+.user-header__notification::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #f0894d;
+  border-radius: 50%;
 }
 .user-header__profile {
   display: flex;
@@ -488,7 +502,7 @@ h4 {
 }
 .team-section .sidebar-avatar {
   margin-left: 0 !important;
-  scale: 1.5;
+  scale: 1.2;
   transform: translateX(6px);
 }
 .team-section .bigfont {
@@ -497,6 +511,7 @@ h4 {
   align-items: center;
   justify-content: center;
   transform: translateX(0px);
+  scale: 0.85;
 }
 .team-section__stats {
   display: grid;
@@ -624,7 +639,7 @@ h4 {
 
 .aside_bar {
   margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   justify-content: flex-end;
 }
 
@@ -702,6 +717,30 @@ h4 {
   border: 1px solid white;
   border-radius: 50%;
   transform: rotate(20deg);
+}
+
+.svg-style {
+  position: absolute;
+  bottom: -18%;
+  right: -28%;
+  scale: 0.8;
+  z-index: -1;
+}
+@media (max-width: 667px) {
+  .svg-style {
+    scale: 0.3;
+    z-index: 0;
+    bottom: -94%;
+    right: -66%;
+  }
+}
+@media (max-width: 527px) {
+  .svg-style {
+    scale: 0.5;
+    z-index: 0;
+    bottom: -49%;
+    right: -49%;
+  }
 }
 
 .dashboard {
@@ -905,7 +944,6 @@ h4 {
 }
 .sidebar__brand p {
   font-size: 1.2rem;
-  color: #9d9d9d;
 }
 @media (max-width: 667px) {
   .sidebar__brand p {
