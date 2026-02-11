@@ -59,9 +59,13 @@
     @content;
   }
 }
-
 @mixin mobile-tablet {
   @media (max-width: #{$tablet - 1}) {
+    @content;
+  }
+}
+@mixin mobile-small {
+  @media (max-width: #{$mobile-small}) {
     @content;
   }
 }
