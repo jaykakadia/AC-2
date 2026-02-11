@@ -40,6 +40,7 @@
 
   @media (max-width: 375px) {
     position: fixed;
+    top: auto;
     bottom: 0;
     left: 0;
     right: 0;
@@ -136,11 +137,28 @@
 .sidebar {
   background-color: $main-color;
   padding: $spacing-lg;
-  overflow-y: auto;
-  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   height: 100vh;
   position: sticky;
   top: 0;
+   // &__brand{
+  //   display: flex;
+  //   align-items: center;
+  //   gap: 1rem;
+  // }
+
+  // &__logo {
+  //   width: 6rem;
+  //   height: auto;
+  //   // margin-bottom: 14px;
+  //   display: none;
+
+  //   @media (max-width: 375px) {
+  //     display: inline-block;
+  //   }
+  // }
   &__line {
     height: 1px;
     background-color: rgba($dark-color, 0.1);
@@ -165,6 +183,7 @@
   }
 
   &__brand {
+    flex-shrink: 0;
     margin-bottom: $spacing-sm;
 
     h1 {
@@ -185,11 +204,36 @@
         font-size: 1rem;
       }
     }
+    &-hamburger {
+      display: none;
+      @media (max-width: 375px) {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__logo {
+    display: none;
+    @media (max-width: 375px) {
+      display: inline-block;
+      height: 4rem;
+      transform: translateX(-1rem);
+    }
   }
 
   &__menu {
     @include flex-column($spacing-sm);
     gap: 0;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-right: -$spacing-lg;
+    padding-right: $spacing-lg;
+
+    @include mobile-tablet {
+      margin-right: -$spacing-md;
+      padding-right: $spacing-md;
+    }
   }
 
   &__item {
@@ -246,16 +290,35 @@
     }
   }
 }
+@media (max-width: 375px) {
+  .flex-containerformobile{
+    display: flex;
+    flex-direction: row;
+    gap: 0; 
+  }
+  .sidebar__brand-content{
+    flex-grow: 1;
+    & h1{
+      margin-bottom: 0;
+    }
+  }
+}
 
 // Main Content
 .main-content {
   padding: $spacing-lg;
   overflow-y: auto;
+  height: 100vh;
+  position: sticky;
+  top: 0;
 
   @include mobile-tablet {
     padding: $spacing-sm;
     grid-column: 3;
     grid-row: 1;
+    height: auto;
+    position: static;
+    overflow-y: visible;
   }
 
   @media (max-width: 375px) {
@@ -293,21 +356,20 @@
     display: none;
   }
 }
-.sidebar__item-content{
-    @media (max-width: 375px) {
-    display: none;
-  }
+.sidebar__item-content {
+  // @media (max-width: 375px) {
+  //   display: none;
+  // }
 }
 .sidebar__item-header.open svg {
-  
-   @media (max-width: 375px) {
-    transform: rotate(-90deg);
-  transition: transform 0.2s ease;
-  }
+  // @media (max-width: 375px) {
+  //   transform: rotate(-90deg);
+  //   transition: transform 0.2s ease;
+  // }
 }
-.sidebar{
+.sidebar {
   @media (max-width: 375px) {
-   overflow-x: hidden; 
+    overflow-x: hidden;
   }
 }
 

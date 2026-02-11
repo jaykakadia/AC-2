@@ -136,10 +136,36 @@
 
       <aside class="sidebar">
         <div class="sidebar__brand">
-          <h1>Ziferblat</h1>
-          <p>Teamwork & time management</p>
+          <div class="flex-containerformobile">
+            <img
+              class="sidebar__logo"
+              src="./Images_and_svgs/images/Logo.png"
+              alt="Ziferblat Logo"
+            />
+            <div class="sidebar__brand-content">
+              <h1>Ziferblat</h1>
+              <p>Teamwork & time management</p>
+            </div>
+            <div class="sidebar__brand-hamburger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 12h18" />
+                <path d="M3 6h18" />
+                <path d="M3 18h18" />
+              </svg>
+            </div>
+          </div>
+          <div class="sidebar__line"></div>
         </div>
-        <div class="sidebar__line"></div>
 
         <nav class="sidebar__menu">
           <div class="sidebar__item">
@@ -384,8 +410,8 @@
       <aside class="right-panel">
         <div class="reminders__dots aside_bar">
           <span></span>
-          <span ></span>
-          <span ></span>
+          <span></span>
+          <span></span>
         </div>
 
         <div class="user-header">
@@ -443,17 +469,24 @@
             <div class="avatar avatar--lg sidebar-avatar">
               <img src="https://i.pravatar.cc/100?img=11" alt="Team member" />
             </div>
-            <div class="avatar avatar--lg sidebar-avatar" >
+            <div class="avatar avatar--lg sidebar-avatar">
               <img src="https://i.pravatar.cc/100?img=12" alt="Team member" />
             </div>
-            <div class="avatar avatar--lg avatar--initials sidebar-avatar">JR</div>
+            <div class="avatar avatar--lg avatar--initials sidebar-avatar">
+              JR
+            </div>
             <div class="avatar avatar--lg sidebar-avatar">
               <img src="https://i.pravatar.cc/100?img=13" alt="Team member" />
             </div>
             <div class="avatar avatar--lg sidebar-avatar">
               <img src="https://i.pravatar.cc/100?img=14" alt="Team member" />
             </div>
-            <div class="avatar avatar--lg avatar--add sidebar-avatar bigfont" style="scale:1" >+</div>
+            <div
+              class="avatar avatar--lg avatar--add sidebar-avatar bigfont"
+              style="scale: 1"
+            >
+              +
+            </div>
           </div>
 
           <div class="team-section__stats">
@@ -485,7 +518,7 @@
               <div class="task-card__add">+</div>
             </div>
 
-            <div class="task-card ">
+            <div class="task-card">
               <div class="task-card__status">
                 <span class="dot"></span>
                 <span>New</span>
@@ -503,8 +536,7 @@
               </div>
               <div class="task-card__checkbox"></div>
               <p class="task-card__title">Make prototype for mobile version</p>
-              <div class="three-rectangle-1">
-              </div>
+              <div class="three-rectangle-1"></div>
               <div class="three-rectangle-2"></div>
               <div class="three-rectangle-3"></div>
             </div>

@@ -258,7 +258,7 @@
     }
     @media (max-width: 1321px) {
       flex-direction: column;
-      gap:$spacing-sm;
+      gap: $spacing-sm;
     }
   }
 
@@ -457,9 +457,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin-top: $spacing-md;
-    @media (max-width: 40rem) {
-      grid-template-columns: repeat(1, 1fr);
-    }
+    // @media (max-width: 39rem) {
+    //   grid-template-columns: repeat(1, 1fr);
+    // }
   }
 }
 
@@ -568,8 +568,8 @@
 }
 .three-rectangle-1 {
   position: absolute;
-  top: 107px;
-  left: -10px;
+  top: 72%;
+  left: -25%;
   width: 70px;
   height: 18px;
   border: 1px solid rgba($accent-color, 0.5);
@@ -577,8 +577,8 @@
 }
 .three-rectangle-2 {
   position: absolute;
-  top: 133px;
-  left: 0px;
+  top: 100%;
+  left: 0%;
   width: 70px;
   height: 18px;
   border: 1px solid rgba($accent-color, 0.5);
@@ -586,8 +586,8 @@
 }
 .three-rectangle-3 {
   position: absolute;
-  top: 94px;
-  left: -40px;
+  top: 79%;
+  left: -5%;
   width: 70px;
   height: 18px;
   border: 1px solid rgba($accent-color, 0.5);
@@ -595,8 +595,8 @@
 }
 .three-circle-1 {
   position: absolute;
-  top: 103px;
-  left: 162px;
+  top: 79%;
+  left: 93%;
   width: 20px;
   height: 25px;
   border: 1px solid white;
@@ -605,8 +605,8 @@
 }
 .three-circle-2 {
   position: absolute;
-  top: 72px;
-  left: 125px;
+  top: 52%;
+  left: 69%;
   width: 34px;
   height: 44px;
   border: 1px solid white;
@@ -615,8 +615,8 @@
 }
 .three-circle-3 {
   position: absolute;
-  top: 115px;
-  left: 95px;
+  top: 89%;
+  left: 55%;
   width: 15px;
   height: 18px;
   border: 1px solid white;
