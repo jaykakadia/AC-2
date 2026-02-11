@@ -580,10 +580,12 @@
       if (hamburger && menu && closeBtn) {
         hamburger.addEventListener("click", () => {
           menu.classList.add("open");
+          document.body.style.overflow = "hidden";
         });
 
         closeBtn.addEventListener("click", () => {
           menu.classList.remove("open");
+          document.body.style.overflow = "auto";
         });
       }
     </script>

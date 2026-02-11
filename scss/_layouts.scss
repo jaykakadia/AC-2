@@ -15,7 +15,7 @@
     grid-template-rows: 1fr auto;
   }
 
-  @media (max-width: 375px) {
+  @include mobile-small {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     padding-bottom: 6rem; // Space for fixed bottom nav
@@ -38,7 +38,7 @@
     padding: $spacing-sm 0;
   }
 
-  @media (max-width: 375px) {
+  @include mobile-small {
     position: fixed;
     top: auto;
     bottom: 0;
@@ -71,7 +71,7 @@
       }
     }
 
-    @media (max-width: 375px) {
+    @include mobile-small {
       display: none;
     }
   }
@@ -80,7 +80,7 @@
     @include flex-column($spacing-sm);
     gap: 0;
 
-    @media (max-width: 375px) {
+    @include mobile-small {
       flex-direction: row;
       gap: 0;
     }
@@ -93,7 +93,7 @@
       color: $dark-color;
       @include transition;
 
-      @media (max-width: 375px) {
+      @include mobile-small {
         width: 4.5rem;
         height: 4.5rem;
       }
@@ -123,7 +123,7 @@
     font-size: 1.6rem;
     font-weight: 600;
 
-    @media (max-width: 375px) {
+    @include mobile-small {
       width: 3.5rem;
       height: 3.5rem;
       font-size: 1.4rem;
@@ -155,7 +155,7 @@
   //   // margin-bottom: 14px;
   //   display: none;
 
-  //   @media (max-width: 375px) {
+  //   @include mobile-small {
   //     display: inline-block;
   //   }
   // }
@@ -165,8 +165,8 @@
     width: 150%;
     transform: translateX(-3.5rem);
     margin: 1rem;
-    @include mobile-small{
-      display:none;
+    @include mobile-small {
+      display: none;
     }
   }
   @include mobile-tablet {
@@ -174,7 +174,7 @@
     padding: $spacing-md;
   }
 
-  @media (max-width: 375px) {
+  @include mobile-small {
     width: 100%;
     height: auto;
     position: static;
@@ -210,7 +210,7 @@
     }
     &-hamburger {
       display: none;
-      @media (max-width: 375px) {
+      @include mobile-small {
         display: inline-block;
         transform: translateY(1px);
       }
@@ -219,7 +219,7 @@
 
   &__logo {
     display: none;
-    @media (max-width: 375px) {
+    @include mobile-small {
       display: inline-block;
       height: 4rem;
       transform: translateX(-1rem);
@@ -240,7 +240,7 @@
       padding-right: $spacing-md;
     }
 
-    @media (max-width: 375px) {
+    @include mobile-small {
       position: fixed;
       top: 0;
       left: 0;
@@ -263,7 +263,7 @@
     &-close {
       display: none;
 
-      @media (max-width: 375px) {
+      @include mobile-small {
         display: flex;
         justify-content: flex-end;
         padding-bottom: $spacing-md;
@@ -280,7 +280,7 @@
 
       span {
         font-weight: 600;
-        @include mobile-small{
+        @include mobile-small {
           font-size: 1.9rem;
         }
       }
@@ -316,7 +316,7 @@
           color: $dark-color;
           font-weight: 500;
         }
-        @include mobile-small{
+        @include mobile-small {
           font-size: 1.5rem;
         }
       }
@@ -332,7 +332,7 @@
     }
   }
 }
-@media (max-width: 375px) {
+@include mobile-small {
   .flex-containerformobile {
     display: flex;
     flex-direction: row;
@@ -364,7 +364,7 @@
     overflow-y: visible;
   }
 
-  @media (max-width: 375px) {
+  @include mobile-small {
     grid-column: 1;
     grid-row: 2;
     padding: $spacing-md;
@@ -389,29 +389,29 @@
     padding: $spacing-sm;
   }
 
-  @media (max-width: 375px) {
+  @include mobile-small {
     grid-column: 1;
     grid-row: 3;
   }
 }
 .icon-sidebar__help {
-  @media (max-width: 375px) {
+  @include mobile-small {
     display: none;
   }
 }
 .sidebar__item-content {
-  // @media (max-width: 375px) {
+  // @include mobile-small {
   //   display: none;
   // }
 }
 .sidebar__item-header.open svg {
-  // @media (max-width: 375px) {
+  // @include mobile-small {
   //   transform: rotate(-90deg);
   //   transition: transform 0.2s ease;
   // }
 }
 .sidebar {
-  @media (max-width: 375px) {
+  @include mobile-small {
     overflow-x: hidden;
   }
 }
