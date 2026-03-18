@@ -1038,9 +1038,8 @@ h4 {
   transition: all 0.2s ease-in-out;
 }
 .sidebar__item-content {
-  display: flex;
+  display: none;
   flex-direction: column;
-  gap: 0.4rem;
   gap: 0;
   padding-left: 1.6rem;
 }
@@ -1068,6 +1067,14 @@ h4 {
 }
 .sidebar__item-content .add-new:hover {
   color: rgb(236.0362694301, 105.8186528497, 29.9637305699);
+}
+.sidebar__item.open .sidebar__item-header svg {
+  transform: rotate(90deg);
+}
+.sidebar__item.open .sidebar__item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 @media (max-width: 375px) {

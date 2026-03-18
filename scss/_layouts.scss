@@ -298,7 +298,8 @@
     }
 
     &-content {
-      @include flex-column($spacing-xs);
+      display: none;
+      flex-direction: column;
       gap: 0;
       padding-left: $spacing-md;
 
@@ -328,6 +329,18 @@
         &:hover {
           color: darken($accent-color, 10%);
         }
+      }
+    }
+
+    &.open {
+      .sidebar__item-header svg {
+        transform: rotate(90deg);
+      }
+      
+      .sidebar__item-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
       }
     }
   }

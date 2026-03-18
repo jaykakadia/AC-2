@@ -201,10 +201,15 @@
                 <path d="m9 18 6-6-6-6" />
               </svg>
             </div>
+            <div class="sidebar__item-content">
+              <a href="#">Team A</a>
+              <a href="#">Team B</a>
+              <a href="#">Team C</a>
+            </div>
           </div>
 
-          <div class="sidebar__item">
-            <div class="sidebar__item-header open">
+          <div class="sidebar__item open">
+            <div class="sidebar__item-header">
               <span>Projects</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -217,7 +222,7 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
-                <path d="m6 9 6 6 6-6" />
+                <path d="m9 18 6-6-6-6" />
               </svg>
             </div>
             <div class="sidebar__item-content">
@@ -231,7 +236,7 @@
           </div>
 
           <div class="sidebar__item">
-            <div class="sidebar__item-header open">
+            <div class="sidebar__item-header">
               <span>Tasks</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -244,7 +249,7 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
-                <path d="m6 9 6 6 6-6" />
+                <path d="m9 18 6-6-6-6" />
               </svg>
             </div>
             <div class="sidebar__item-content">
@@ -273,6 +278,12 @@
                 <path d="m9 18 6-6-6-6" />
               </svg>
             </div>
+            <div class="sidebar__item-content">
+              <a href="#">Reminder 1</a>
+              <a href="#">Reminder 2</a>
+              <a href="#">Reminder 3</a>
+              <a href="#">Reminder 4</a>
+            </div>
           </div>
 
           <div class="sidebar__item">
@@ -291,6 +302,12 @@
               >
                 <path d="m9 18 6-6-6-6" />
               </svg>
+            </div>
+            <div class="sidebar__item-content">
+              <a href="#">Messages 1</a>
+              <a href="#">Messages 2</a>
+              <a href="#">Messages 3</a>
+              <a href="#">Messages 4</a>
             </div>
           </div>
         </nav>
@@ -590,6 +607,18 @@
           document.body.style.overflow = "auto";
         });
       }
+
+      // Sidebar items toggle logic
+      const sidebarHeaders = document.querySelectorAll('.sidebar__item-header');
+      sidebarHeaders.forEach((header) => {
+        header.addEventListener('click', () => {
+          const item = header.closest('.sidebar__item');
+          if (item) {
+            item.classList.toggle('open');
+          }
+        });
+      });
+
     </script>
   </body>
 </html>
